@@ -1,4 +1,9 @@
-import { CommandInteraction, SlashCommandBuilder } from "discord.js";
+import { Client, Collection, CommandInteraction, SlashCommandBuilder } from "discord.js";
+
+// Extend the Client class to include a commands property
+export class BotClient extends Client {
+    commands!: Collection<string, any>;
+}
 
 export interface Command {
     data: SlashCommandBuilder;
