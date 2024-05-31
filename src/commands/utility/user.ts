@@ -1,9 +1,5 @@
-import { CommandInteraction, SlashCommandBuilder } from "discord.js";
-
-interface Command {
-    data: SlashCommandBuilder;
-    execute: (interaction: CommandInteraction) => Promise<void>;
-}
+import { SlashCommandBuilder } from "discord.js";
+import { Command } from "../../types";
 
 const command: Command = {
     data: new SlashCommandBuilder()

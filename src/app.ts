@@ -45,8 +45,6 @@ client.on(Events.InteractionCreate, async (interaction) => {
 
     const command = (interaction.client as BotClient).commands.get(interaction.commandName);
 
-    if (!command) return;
-
     if (!command) {
         console.error(`No command matching ${interaction.commandName} was found.`);
         return;
@@ -69,7 +67,11 @@ client.on(Events.InteractionCreate, async (interaction) => {
         }
     }
 
-    console.log(interaction);
+    console.log(
+        `[${new Date(interaction.createdTimestamp).toLocaleString()}] - ${
+            interaction.commandName
+        } command was executed by ${interaction.user.tag}`
+    );
 });
 
 client.login(token);
